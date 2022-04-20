@@ -4,7 +4,13 @@
 #lowest score is Rose, then Blanche, then Dorothy, then Sophia with highest score
 score = 0
 
-response1 = int(input("How many sarcastic remarks do you make per week?  "))
+response1 = input("How many sarcastic remarks do you make per week?  ")
+
+while not response1.isnumeric():
+    print("You must enter a positive whole number.")
+    response1 = input("How many sarcastic remarks do you make per week?  ")
+
+response1 = int(response1)
 
 while response1 > 100:
     print("That's unlikely. Try a lower number.")

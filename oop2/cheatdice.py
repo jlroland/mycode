@@ -31,3 +31,13 @@ class Cheat_Loaded_Dice(Player): # inheritance of Player
               self.dice[i] += 1
           i += 1
 
+# allows user an extra roll in each round, keeping the higher number
+class Cheat_Double_Roll(Player):
+    def cheat(self):
+        i = 0
+        while i < len(self.dice):
+            new_roll = randint(1,6)
+            if new_roll > self.dice[i]:
+                self.dice[i] = new_roll
+            i += 1
+
